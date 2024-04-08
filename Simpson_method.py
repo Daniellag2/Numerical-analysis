@@ -39,11 +39,14 @@ def simpsons_rule(f, a, b, n):
 
 
 if __name__ == '__main__':
-    f = lambda x: (math.sin(x ** 2 + 5 * x + 6)) / (2 * math.e ** (-x))
+    f = lambda x: (6*x**2 - math.cos(x**4 -x + 2)) / (x**2 + x + 2)
     n = 60
-    a = -1.4
-    b = 1.1
+    a = -1.5
+    b = 1.2
 
     print(f" Division into n={n} sections ")
     integral = simpsons_rule(f, a, b, n)
-    print(f"Numerical Integration of definite integral in range [{a},{b}] is {round(integral, 5)}")
+    print(f"Numerical Integration of definite integral in range [{a},{b}] is {integral}")
+    print(f" Division into n={n+2} sections ")
+    integral = simpsons_rule(f, a, b, n+2)
+    print(f"Numerical Integration of definite integral in range [{a},{b}] is {integral}")
